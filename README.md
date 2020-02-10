@@ -31,7 +31,7 @@ Como usuario puedo guardar tiendas y productos, ademas de agregar, comentar y va
 * Diagrama conceptual (en desarrollo).
 ![alt text][concept]
 
-[concept]: /diagrama_conceptual.png (en desarrollo)
+[concept]: /diagramaconceptual.png (en desarrollo)
 
 * Diagrama logico de la base de datos (en desarrollo).
 ![alt text][logic]
