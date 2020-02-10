@@ -28,6 +28,7 @@ Como usuario puedo guardar tiendas y productos, ademas de agregar, comentar y va
 * Para visualizar el landing page ingrese a:
 * [Heroku] (---)
 
+
 * Diagrama conceptual (en desarrollo).
 ![alt text][concept]
 
