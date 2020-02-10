@@ -28,7 +28,7 @@ Como usuario puedo guardar tiendas y productos, ademas de agregar, comentar y va
 * Para visualizar el landing page ingrese a:
 * [Heroku] (---)
 
-* Diagrama conceptual de la base de datos (en desarrollo).
+* Diagrama conceptual (en desarrollo).
 ![alt text][concept]
 
 [concept]: /diagrama_conceptual.png (en desarrollo)
@@ -36,4 +36,4 @@ Como usuario puedo guardar tiendas y productos, ademas de agregar, comentar y va
 * Diagrama logico de la base de datos (en desarrollo).
 ![alt text][logic]
 
-[logic]: /diagrama_logico.png
+[logic]: /diagrama_BD.png
