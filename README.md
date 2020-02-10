@@ -26,7 +26,7 @@ Como usuario puedo guardar tiendas y productos, ademas de agregar, comentar y va
 [Tablero Trello] (https://trello.com/b/YRiVhsVv/proyecto-g-28-veganlog)
 
 * Para visualizar el landing page ingrese a:
-* [Heroku] (---)
+* [Heroku] (----------------------------------------------------------)
 
 
 * Diagrama conceptual (en desarrollo).
