@@ -12,7 +12,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :storeId
       t.integer :userId
       t.integer :totalScore
-      t.refences :category
+      t.references :category
 
       t.timestamps
     end
