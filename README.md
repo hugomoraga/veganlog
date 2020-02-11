@@ -26,9 +26,9 @@ VeganLog, es un inventario de productos veganos nacido como Proyecto para Desafi
 
 ![enter image description here](https://github.com/hugomoraga/veganlog/raw/master/diagramaconceptual.png)
 
-## Diagrama logico de la Base De datos [en desarrollo]
+## Diagrama logico de la Base de Datos [en desarrollo]
 
 ![enter image description here](https://github.com/hugomoraga/veganlog/raw/master/diagrama_BD.png)
 
-## Landing page  [Heroku]
-[Link del Proyecto](www.heroku.com)
+## Landing page  [Heroku][en desarrollo]
+[Link del Proyecto](https://veganlog.herokuapp.com)
