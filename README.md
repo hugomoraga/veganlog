@@ -1,40 +1,34 @@
-# Veganlog
 
-Vegan Log. Inventario de productos veganos [Proyecto G28 Desafio Latam]
+# VeganLog!
 
-* Proyecto para veganos y personas interesadas en el veganismo que quieren contribuir y obtener informacion de tiendas, y productos libre de crueldad animal.
+VeganLog, es un inventario de productos veganos nacido como Proyecto para Desafio Latam Generacion 28.
 
-* El proyecto es un sistema de inventario con productos y tiendas veganas, con listado, descripcion, precios, ubicacion, comparativas, y valoraciones de productos. 
+-   Esta realizado para veganos y personas interesadas en el veganismo que quieren contribuir y obtener información de productos y tiendas libre de crueldad animal.
+    
+-   El proyecto es un sistema de inventario con un listado de productos con descripción, precios, tiendas, ubicación, comparativas,  y valoraciones. Estas son desplegadas mediante consultas por el usuario.
+    
+-   Los datos son contribuidos por los mismos usuarios, también existen moderadores, para revisar contenido reportado. El inventario puede ser consultado por productos, ubicación, aporte de usuarios, y tiendas.
 
-* Los datos son contribuidos por los mismos usuarios, tambien existen moderadores, para revisar contenido reportado. 
-El inventario puede ser consultado por productos, ubicacion, aporte de usuarios, y tiendas.
+## Esta realizado en
 
-* Tambien tiene seccion de favoritos de los usuarios, mediante puntacion realizada por la valorizacion de los mismos.
-Como usuario puedo guardar tiendas y productos, ademas de agregar, comentar y valorizar otros.
- 
-* El sistema puede ser consultado como visita, con solo opcion de ver y consultar la base de datos.
-
-* Los usuarios con perfil de moderador, pueden editar y eliminar productos o tiendas. 
-
-* Ruby version: 2.6.3
-
-* Rails version: 5.2.4.1
-
-* Base de datos Postgres.
-
-* Se utilizo la herramienta Trello para la ejecucion del proyecto.
-[Tablero Trello] (https://trello.com/b/YRiVhsVv/proyecto-g-28-veganlog)
-
-* Para visualizar el landing page ingrese a:
-* [Heroku] (----------------------------------------------------------)
+ -  Ruby version: 2.6.3
+    
+-   Rails version: 5.2.4.1
+    
+-   Base de datos PostgreSql
 
 
-* Diagrama conceptual (en desarrollo).
-![alt text][concept]
+## Gestion del Proyecto [Tablero Trello]
 
-[concept]: /diagramaconceptual.png (en desarrollo)
+[Link Tablero del Proyecto ](https://trello.com/b/YRiVhsVv/proyecto-g-28-veganlog)
+    
+## Mapa Conceptual
 
-* Diagrama logico de la base de datos (en desarrollo).
-![alt text][logic]
+![enter image description here](https://github.com/hugomoraga/veganlog/raw/master/diagramaconceptual.png)
 
-[logic]: /diagrama_BD.png
+## Diagrama Conceptual de la Base De datos [en desarrollo]
+
+![enter image description here](https://github.com/hugomoraga/veganlog/raw/master/diagrama_BD.png)
+
+## Landing page  [Heroku]
+[Link del Proyecto](www.heroku.com)
