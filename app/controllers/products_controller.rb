@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  #before_action :set_categories, only: [:new, :edit, :create]
+
 
   # GET /products
   # GET /products.json
@@ -67,8 +69,12 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
     end
 
+    def set_categories
+      @categories_array = Category.order(:name).pluck(:name, :id)
+    end
+
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:productName, :comercialName, :markName, :price, :ingredients, :description, :imgUrl, :addressId, :storeId, :userId, :totalScore, :category)
+      params.require(:product).permit(:productName, :comercialName, :markName, :price, :ingredients, :description, :imgUrl, :addressId, :storeId, :userId, :totalScore, :category_id)
     end
 end
