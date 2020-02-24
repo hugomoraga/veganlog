@@ -23,7 +23,7 @@
 <% slice_products.each do |product| %>
   <div class="card mb-4 card-custom mx-auto" style="max-width: 80vw;">
   <div class="row">
-    <div class="col-md-4 d-flex justify-content-center">
+    <div class="col-md-4 d-flex justify-content-center py-3">
       <td><%= image_tag product.imgUrl , class:'card-img-top displayed' %></td>
     </div>
         <div class="col-md-8">
@@ -50,6 +50,4 @@
 
 
 <br>
-
-<%= link_to 'New Product', new_product_path %>
 

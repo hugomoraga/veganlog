@@ -7,7 +7,6 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :price
       t.string :ingredients
       t.string :description
-      t.string :imgUrl
       t.integer :addressId
       t.integer :storeId
       t.integer :userId

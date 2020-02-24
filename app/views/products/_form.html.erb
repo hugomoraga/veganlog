@@ -47,11 +47,6 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :ImagenUrl, class: 'h4 custom-font' %>
-    <%= form.text_field :imgUrl, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
     <%= form.label :Direccion, class: 'h4 custom-font' %>
     <%= form.text_field :addressId, class: 'form-control' %>
   </div>
@@ -69,15 +64,22 @@
   <div class="form-group">
     <%= form.label :totalScore, class: 'h4 custom-font' %>
     <%= form.text_field :totalScore, class: 'form-control' %>
-  </div><br>
+  </div>
 
   <div class="form-group">
+  <%= form.label :Categoria, class: 'h4 custom-font'  %> <br>
     <%= form.select(:category_id, options_for_select(Category.pluck(:name, :id)), { prompt: "Seleccionar Categoria" }, { class: "form form-group form-control" }) %>
-     </div>
- 
+  </div>
+  
+  <div class="form-group">
+<%= form.label :Imagen, class: 'h4 custom-font'  %> <br>
+<%= form.file_field :imgUrl, class: 'btn btn-info' %>
+</div>
+ <br>
   <div class="actions">
     <%= form.submit %>
   </div>
+
   </div>
 </form>
 <% end %>
