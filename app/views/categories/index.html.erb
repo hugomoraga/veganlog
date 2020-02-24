@@ -1,0 +1,20 @@
+<h1 class="text-center custom-font">Categorias</h1>
+
+<%= render 'form', product: @category %>
+
+<div class="card mb-4 card-custom mx-auto" style="max-width: 45vw;">
+  <div class="row">
+  <div class="card-body" style="background-color: rgba(102, 204, 153, 1); ">
+
+              <ul class="list-group list-group-flush">
+                <% @categories.each do |category|%>
+             <li class="list-group-item"> <%= category.name %> </li>
+             <% end %>
+                </ul>
+        </div>
+        
+</div>
+</div>
+</div>
+
+<%= link_to 'Back', root_path, class: 'btn btn-info' %>

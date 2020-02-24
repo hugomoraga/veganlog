@@ -1,3 +1,7 @@
+
+<div class="d-flex justify-content-center">
+<div class="box-form">
+
 <%= form_with(model: product, local: true) do |form| %>
   <% if product.errors.any? %>
     <div id="error_explanation">
@@ -10,67 +14,73 @@
       </ul>
     </div>
   <% end %>
+  <form>
 
-  <div class="field">
-    <%= form.label :productName %>
-    <%= form.text_field :productName %>
+    <div class="form-group">
+    <%= form.label :Nombre, class: 'h4 custom-font' %>
+    <%= form.text_field :productName, class: 'form-control' %>
+    </div>
+
+  <div class="form-group">
+    <%= form.label :'Nombre Comercial', class: 'h4 custom-font' %>
+    <%= form.text_field :comercialName, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :comercialName %>
-    <%= form.text_field :comercialName %>
+  <div class="form-group">
+    <%= form.label :Marca, class: 'h4 custom-font' %>
+    <%= form.text_field :markName, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :markName %>
-    <%= form.text_field :markName %>
+  <div class="form-group">
+    <%= form.label :Precio, class: 'h4 custom-font' %>
+    <%= form.text_field :price, class: 'form-control'  %>
   </div>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
+  <div class="form-group">
+    <%= form.label :Ingredientes, class: 'h4 custom-font' %>
+    <%= form.text_field :ingredients, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :ingredients %>
-    <%= form.text_field :ingredients %>
+  <div class="form-group">
+    <%= form.label :Descripcion, class: 'h4 custom-font' %>
+    <%= form.text_field :description, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
+  <div class="form-group">
+    <%= form.label :ImagenUrl, class: 'h4 custom-font' %>
+    <%= form.text_field :imgUrl, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :imgUrl %>
-    <%= form.text_field :imgUrl %>
+  <div class="form-group">
+    <%= form.label :Direccion, class: 'h4 custom-font' %>
+    <%= form.text_field :addressId, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :addressId %>
-    <%= form.text_field :addressId %>
+  <div class="form-group">
+    <%= form.label :Tienda, class: 'h4 custom-font' %>
+    <%= form.text_field :storeId, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :storeId %>
-    <%= form.text_field :storeId %>
+  <div class="form-group">
+    <%= form.label :Usuario, class: 'h4 custom-font' %>
+    <%= form.text_field :userId, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :userId %>
-    <%= form.text_field :userId %>
-  </div>
+  <div class="form-group">
+    <%= form.label :totalScore, class: 'h4 custom-font' %>
+    <%= form.text_field :totalScore, class: 'form-control' %>
+  </div><br>
 
-  <div class="field">
-    <%= form.label :totalScore %>
-    <%= form.text_field :totalScore %>
-  </div>
-
-  <div class="field">
-    <%= form.select(:category_id, options_for_select(Category.pluck(:name, :id)), prompt: "Selecccione Categoria") %>
+  <div class="form-group">
+    <%= form.select(:category_id, options_for_select(Category.pluck(:name, :id)), { prompt: "Seleccionar Categoria" }, { class: "form form-group form-control" }) %>
      </div>
  
   <div class="actions">
     <%= form.submit %>
   </div>
+  </div>
+</form>
 <% end %>
+
+</div>
+</div>
