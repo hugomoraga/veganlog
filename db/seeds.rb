@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Product.destroy_all
+Category.destroy_all
 
 Category.where(name: 'Hamburguesas').first_or_create
 Category.where(name: 'Embutidos').first_or_create
