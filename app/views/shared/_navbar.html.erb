@@ -15,23 +15,26 @@
         <li class="nav-item">
           <%= link_to  "Categorias", new_category_path, class: 'nav-link' %>
       </li>
-    <% if !user_signed_in? %>
-              <li class="nav-item">
-              <%= link_to 'Iniciar sesión', new_user_session_path, class: 'nav-link' %>
-              </li>
-              <li class="nav-item">
-              <%= link_to 'Registrarse',  new_user_registration_path, class: 'nav-link'%>
-              </li>
+      <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <% if user_signed_in? %>
+             <%= current_user.email %>
+          <% else %>
+             Ingresar
+          <% end %>
+        </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+         
+            <%= link_to 'Editar Perfil', edit_user_registration_path, class: 'nav-link' %>
+            <% if !user_signed_in? %>
+            <%= link_to 'Iniciar sesión', new_user_session_path, class: 'nav-link' %>
+            <%= link_to 'Registrarse',  new_user_registration_path, class: 'nav-link'%>
             <% else %>
-            <li class="nav-item">
-              <a class="nav-link"><%= current_user.name %></a>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+            <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: 'nav-link' %>
             <% end %>
-            </li>
-            
-        </ul>
+          </div>
+       </li>
+    </ul>
   </div>
 </nav>
 </div>

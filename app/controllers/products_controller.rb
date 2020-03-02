@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   #before_action :set_categories, only: [:new, :edit, :create]
 
 
@@ -29,6 +30,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
+    @product.user = current_user
 
     respond_to do |format|
       if @product.save
@@ -77,6 +79,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:productName, :comercialName, :markName, :price, :ingredients, :description, :imgUrl, :addressId, :storeId, :userId, :totalScore, :category_id)
+      params.require(:product).permit(:productName, :comercialName, :markName, :price, :ingredients, :description, :imgUrl, :addressId, :storeId, :totalScore, :category_id, :user_id)
     end
 end
