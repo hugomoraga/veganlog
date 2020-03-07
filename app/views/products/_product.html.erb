@@ -1,0 +1,17 @@
+<div class="card mb-4 card-custom mx-auto">
+  <div class="row">
+    <div class="col-md-3 d-flex">
+    <div class="p-2">
+      <%= image_tag product.image , class:'ml-3 card-img-top displayed' %>
+    </div>
+    </div>
+    <div class="col-md-9">
+      <div class="card-body">
+       <h5 class="card-title"><%=product.productname%></h5>
+        <p class="card-text"><%=product.comercialName%></p>
+        <p class="card-text"><%=product.ingredients%></p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>

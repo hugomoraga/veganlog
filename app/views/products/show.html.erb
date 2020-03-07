@@ -6,18 +6,17 @@
   <div class="card mb-4 card-custom mx-auto" style="max-width: 75vw;">
   <div class="row">
     <div class="col-md-4 d-flex justify-content-center py-2">
-      <td><%= image_tag @product.imgUrl , class:'card-img-top displayed' %></td>
+      <td><%= image_tag @product.image , class:'card-img-top displayed' %></td>
     </div>
         <div class="col-md-8">
           <div class="card-body" style="background-color: rgba(102, 204, 153, 1); ">
           <br>
-            <h5 class="card-title font-weight-bold custom-font">Producto: <span class="h5"> <%=@product.productName%> </span></h5>
+            <h5 class="card-title font-weight-bold custom-font">Producto: <span class="h5"> <%=@product.productname%> </span></h5>
             <h5 class="card-title font-weight-bold custom-font">Nombre:<span class="h5"> <%=@product.comercialName%></span></h5>
             <h5 class="card-title font-weight-bold custom-font">Marca:<span class="h5"> <%=@product.markName %></span></h5>
             <h5 class="card-title font-weight-bold custom-font">Precio:<span class="h5"> $ <%=@product.price %></span></h5>
             <h5 class="card-title font-weight-bold custom-font">Categoria:<span class="h5"> <%=@product.category.name  %></h5>
             <h5 class="card-title font-weight-bold custom-font">Ingredientes:<span class="h5"> <%=@product.ingredients  %></h5>
-            <h5 class="card-title font-weight-bold custom-font">Tienda:<span class="h5"> <%=@product.storeId %></h5>
 
             <%=link_to 'Editar', edit_product_path(@product), class: 'btn btn-outline-success custom-font'%>
             <%=link_to 'Eliminar', @product,method: :delete, data:{confirm: 'Are you sure?'}, class: 'btn btn-outline-success custom-font'%>

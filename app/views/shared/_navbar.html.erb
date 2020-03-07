@@ -1,6 +1,6 @@
 <div class="container">
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="background-color: #e3f2fd">
-<%= link_to "VeganLog", root_path, class: 'navbar-brand' %> 
+<nav class="navbar navbar-expand-lg  fixed-top navbar-light" style="background-color: #008080">
+<%= link_to image_tag("veganlog_navbar.png", height: '40'), root_path, class:'navbar-brand' %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -23,7 +23,7 @@
              Ingresar
           <% end %>
         </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <div class="dropdown-menu font-submenu" style="background-color: #008080" aria-labelledby="navbarDropdownMenuLink">
          
             <%= link_to 'Editar Perfil', edit_user_registration_path, class: 'nav-link' %>
             <% if !user_signed_in? %>

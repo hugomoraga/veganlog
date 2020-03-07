@@ -1,0 +1,49 @@
+
+
+
+<div id="search">
+
+  <form>
+    <div class="form-group mx-auto" style="max-width: 50vw;">
+      <label for="formGroupExampleInput"></label>
+      <input type="text" name="q" class="form-control form-control-lg card-custom" id="formGroupExampleInput" placeholder="buscar...">
+    </div>
+  <form><br>
+</div>
+
+
+<h1 class="custom-font text-center">Productos:</h1><br><br>
+
+<ul>
+<% @products.each_slice(10) do |slice_products| %>
+  <% slice_products.each do |product| %>
+    <div class="card mb-4 card-custom mx-auto" style="max-width: 80vw;">
+      <div class="row">
+        <div class="col-md-4 d-flex justify-content-center py-3">
+          <td><%= image_tag product.imgUrl , class:'card-img-top displayed' %></td>
+        </div>
+            <div class="col-md-8">
+              <div class="card-body" style="background-color: rgba(102, 204, 153, 1); ">
+              <h5 class="card-title font-weight-bold custom-font">Producto: <span class="h5"> <%=product.productName%> </span></h5>
+              <h5 class="card-title font-weight-bold custom-font">Nombre:<span class="h5"> <%=product.comercialName%></span></h5>
+              <h5 class="card-title font-weight-bold custom-font">Marca:<span class="h5"> <%=product.markName %></span></h5>
+              <h5 class="card-title font-weight-bold custom-font">Precio:<span class="h5"> $ <%=product.price %></span></h5>
+              <h5 class="card-title font-weight-bold custom-font">Categoria:<span class="h5"> <%=product.category.name  %></h5>
+              <h5 class="card-title font-weight-bold custom-font">Ingredientes:<span class="h5"> <%=product.ingredients  %></h5>
+
+              <%=link_to 'Ver mas', product, class: 'btn btn-outline-success custom-font' %>
+              <%=link_to 'Editar', edit_product_path(product), class: 'btn btn-outline-success custom-font'%>
+              <%=link_to 'Eliminar', product,method: :delete, data:{confirm: 'Are you sure?'}, class: 'btn btn-outline-success custom-font'%>
+              <br>
+              <p class="card-text text-right h5"><small class="text-muted">Last updated: <%=time_ago_in_words(product.updated_at)%></small></p>
+
+            </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+</ul>
+
+<br>
+
