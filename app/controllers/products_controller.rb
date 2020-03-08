@@ -10,9 +10,10 @@ class ProductsController < ApplicationController
     @products = unless params[:q]
       Product.all
     else
-      Product.where('productname ILIKE ?', "%#{params[:q]}%")
+      Product.where('productname ILIKE ?', "%#{params[:q]}%") 
+        
     end
-    @products_last = Product.last(2)
+    @products_last = Product.last(10)
   end
 
 
@@ -94,6 +95,6 @@ end
 
 # Only allow a list of trusted parameters through.
 def product_params
-  params.require(:product).permit(:productname, :q, :comercialName, :markName, :price, :ingredients, :description, :image, :totalScore, :store_id, :category_id, :user_id)
+  params.require(:product).permit(:productname, :comercialName, :markName, :price, :ingredients, :description, :image, :totalScore, :store_id, :category_id, :user_id)
 end
 end

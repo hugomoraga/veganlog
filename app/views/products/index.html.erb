@@ -1,19 +1,22 @@
 
- <div class="PriceBlocks-sliderContainer p-3" style="height: 500px;">
+ <div class="PriceBlocks-sliderContainer p-3">
     <div class="PriceBlocks-slider" >
-      <% @products.each do |product| %>
+      <% @products_last .each do |product| %>
        <div class="PriceBlock-container">
           <div class="PriceBlock m-1 card-custom">
             <div class="PriceBlock-top">
               <div class="card-img-top">
-                <%= image_tag product.image.variant(resize: '200x200') %>
+                <%= image_tag product.image.variant(resize: '200x150') %>
                </div>
             </div>
               <div class="card p-1" style="height: 160px;">
                 <p class="card-title"><%=product.productname %></p>
                 <p class="card-text"><%=product.comercialName %> </p>
                 <p class="card-text description"> <%=product.description %></p>
+
               </div>
+               <%= link_to 'Edit', edit_product_path(product) %>
+
             </div>
           </div>
       <% end %>
@@ -21,28 +24,27 @@
     </div>
   </div>
 
-
-<br>
-<br>
 <br>
 <br>
 
-  <div class="container">
-    <h1 class="custom-font text-center">Busqueda</h1><br><br>
-    <form>
-        <div class="form-group mx-auto" style="max-width: 80vw;">
-            <label for="formGroupExampleInput"></label>
-            <input type="text" name="q" class="form-control form-control-lg card-custom" id="formGroupExampleInput" placeholder="buscar...">
-        </div>
-    <form>
-          <div id="append">
-          </div>
-<br>
-<br>
-<br>
-<br>
-  </div>
  
+  <div class="container">
+
+  
+    <h1 class="custom-font text-center">Busqueda</h1><br><br>
+      <div id="search">
+        <form>
+          <div class="form-group mx-auto" style="max-width: 50vw;">
+            <label for="formGroupExampleInput"></label>
+             <input type="text" name="q" class="form-control form-control-lg card-custom" id="formGroupExampleInput" placeholder="buscar...">
+          </div>
+        <form><br>
+      </div>
+          
+      <div id="append">
+      </div>
+  </div>
+
 
 <script>
 var $carousel = $('.PriceBlocks-slider').flickity({
@@ -83,8 +85,3 @@ function changeSlideClasses(slide, method, className) {
 </script>
 
 
-<footer>
-  <div class="footer-copyright text-center bg-dark text-light py-3"> <%= link_to image_tag("veganlog_navbar.png", height: '25'), root_path %> by Hugo Moraga. Todos los Derechos Reservados.
-  </div>
-  
-</footer>

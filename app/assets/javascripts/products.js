@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $('#getButton').click(function() {
-      
+        
         //fetch comments from server
         $.ajax({
             type: "GET",
@@ -9,29 +9,35 @@ $(document).ready(function(){
         });
         
     })
-
-
-
-    $('[name=q]').on('keyup',function (){
-        //console.log($(this).val())
-        //$('h1')[0].innerHTML = $(this).val()
-        if ($(this).val().length > 2){
-            $.ajax({
-                type: "get",
-                url: "/products",
-                data: { q: $(this).val() },
-                dataType: "script"
-            });
-        }
-
-        if ($(this).val().length == 0){
-            $.ajax({
-                type: "get",
-                url: "/products",
-                data: { q: $(this).val() },
-                dataType: "script"
-            });
-        }
-    })
-
+    
+    
+    
+    var searchRequest = null;
+    
+    $(function () {
+        var minlength = 3;
+        
+        $("[name=q]").on('keyup',function () {
+            var that = this,
+            value = $(this).val();
+            
+            if (value.length >= minlength ) {
+                if (searchRequest != null) 
+                searchRequest.abort();
+                searchRequest = $.ajax({
+                    type: "get",
+                    url: "/products",
+                    data: { q: $(this).val() },
+                    dataType: "script",
+                    success: function(msg){
+                        //we need to check if the value is the same
+                        if (value==$(that).val()) {
+                            //Receiving the result of search here
+                        }
+                    }
+                });
+            }
+        });
+    });
+    
 })
