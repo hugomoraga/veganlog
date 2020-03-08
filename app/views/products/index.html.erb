@@ -6,10 +6,10 @@
           <div class="PriceBlock m-1 card-custom">
             <div class="PriceBlock-top">
               <div class="card-img-top">
-                <%= image_tag product.image.variant(resize: '200x150') %>
+                <%= image_tag product.image.variant(resize: '150x150') %>
                </div>
             </div>
-              <div class="card p-1" style="height: 160px;">
+              <div class="card p-1" style="height: 140px;">
                 <p class="card-title"><%=product.productname %></p>
                 <p class="card-text"><%=product.comercialName %> </p>
                 <p class="card-text description"> <%=product.description %></p>
@@ -24,14 +24,11 @@
     </div>
   </div>
 
-<br>
-<br>
-
  
   <div class="container">
 
   
-    <h1 class="custom-font text-center">Busqueda</h1><br><br>
+    <h1 class="custom-font text-center pt-3">Busqueda</h1>
       <div id="search">
         <form>
           <div class="form-group mx-auto" style="max-width: 50vw;">

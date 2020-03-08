@@ -2,25 +2,26 @@
 
 
 
-
-  <div class="card mb-4 card-custom mx-auto" style="max-width: 75vw;">
+<div class="container">
+  <div class="card border-primary mb-4 card-custom mx-auto">
   <div class="row">
     <div class="col-md-4 d-flex justify-content-center py-2">
       <td><%= image_tag @product.image , class:'card-img-top displayed' %></td>
     </div>
-        <div class="col-md-8">
-          <div class="card-body" style="background-color: rgba(102, 204, 153, 1); ">
+        <div class="col-md-8" style="background-color: #37C8AB;">
+          <div class="card-body">
           <br>
-            <h5 class="card-title font-weight-bold custom-font">Producto: <span class="h5"> <%=@product.productname%> </span></h5>
-            <h5 class="card-title font-weight-bold custom-font">Nombre:<span class="h5"> <%=@product.comercialName%></span></h5>
-            <h5 class="card-title font-weight-bold custom-font">Marca:<span class="h5"> <%=@product.markName %></span></h5>
-            <h5 class="card-title font-weight-bold custom-font">Precio:<span class="h5"> $ <%=@product.price %></span></h5>
-            <h5 class="card-title font-weight-bold custom-font">Categoria:<span class="h5"> <%=@product.category.name  %></h5>
-            <h5 class="card-title font-weight-bold custom-font">Ingredientes:<span class="h5"> <%=@product.ingredients  %></h5>
-
-            <%=link_to 'Editar', edit_product_path(@product), class: 'btn btn-outline-success custom-font'%>
-            <%=link_to 'Eliminar', @product,method: :delete, data:{confirm: 'Are you sure?'}, class: 'btn btn-outline-success custom-font'%>
-            <%=link_to 'Volver', products_path, class: 'btn btn-outline-success custom-font'%>
+            <h5 class="card-title font-weight-bold custom-font-white">Producto: <span class="h5"> <%=@product.productname%> </span></h5>
+            <h5 class="card-title font-weight-bold custom-font-white">Nombre:<span class="h5"> <%=@product.comercialName%></span></h5>
+            <h5 class="card-title font-weight-bold custom-font-white">Marca:<span class="h5"> <%=@product.markName %></span></h5>
+            <h5 class="card-title font-weight-bold custom-font-white">Precio:<span class="h5"> $ <%=@product.price %></span></h5>
+            <h5 class="card-title font-weight-bold custom-font-white">Categoria:<span class="h5"> <%=@product.category.name  %></h5>
+            <h5 class="card-title font-weight-bold custom-font-white">Ingredientes:<span class="h5"> <%=@product.ingredients  %></h5>
+            <div class="card-footer">
+          </div>
+            <%=link_to 'Editar', edit_product_path(@product), class: 'btn btn-outline-success custom-font-white'%>
+            <%=link_to 'Eliminar', @product,method: :delete, data:{confirm: 'Are you sure?'}, class: 'btn btn-outline-success custom-font-white'%>
+            <%=link_to 'Volver', products_path, class: 'btn btn-outline-success custom-font-white'%>
 
             <br>
             <p class="card-text text-right h5"><small class="text-muted">Last updated: <%=time_ago_in_words(@product.updated_at)%></small></p>
@@ -30,4 +31,4 @@
   </div>
   </div>
  
-
+</div>
