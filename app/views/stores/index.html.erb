@@ -1,35 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-<h1>Stores</h1>
+<h1>Tiendas</h1>
 
     
-  <table>
-  <tbody>
-   
-    <% @stores.each do |store| %>
-     <div class="card">
-  <div class="card-body">
- 
-      <tr>
-        <td><h5 class="custom-font">Store: <span class="h5"> <%=store.name%> </span></h5> </td> 
-        <td><h5 class="custom-font">Url:<span class="h5"> <%=store.url%></span></h5> </td>
-        <td><h5 class="custom-font">Adress:<span class="h5"> <%=store.address%></span></h5> </td>
-        <td><%= link_to 'Show', store %></td>
-        <td><%= link_to 'Edit', edit_store_path(store) %></td>
-        <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
-      </tr>
+  
+
+  <div class="card border-success mb-3">
+      <% @stores.each do |store| %>
+      <div class="card m-2">
+    <div class="card-body">
+      <h5 class="custom-font">Store: <span class="h5"> <%=store.name%> </span></h5> 
+      <h5 class="custom-font">Url:<span class="h5"> <%=store.url%></span></h5> 
+      <h5 class="custom-font">Adress:<span class="h5"> <%=store.address%></span></h5> 
+         <div class="card-footer">
+          <%= link_to 'Show', store %></td>
+          <%= link_to 'Edit', edit_store_path(store) %></td>
+          <%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
       </div>
-            </div>
+      </div>
+      <% end %> 
+    </div>
 
-    <% end %> 
+
+
    
 
-  </tbody>
-</table>
- </div>
-    </div>
-<br>
+
 
 <%= link_to 'New Store', new_store_path %>
 

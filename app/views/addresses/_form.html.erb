@@ -1,0 +1,36 @@
+<% provide :head_tags do %>
+    <meta name='turbolinks-visit-control' content='reload'>
+    <script>
+        document.addEventListener("DOMContentLoaded", initMap2);
+    </script>
+<% end %>
+
+<%= form_with(model: address, local: true) do |form| %>
+  <% if address.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(address.errors.count, "error") %> prohibited this address from being saved:</h2>
+
+      <ul>
+      <% address.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :direccion %>
+    <%= form.text_field :name %>
+  </div>
+
+
+
+    <div class="form-group">
+  <%= form.label :Tiendas, class: 'h4 custom-font'  %> <br>
+    <%= form.select(:store_id, options_for_select(Store.pluck(:name, :id)), { prompt: "Seleccionar Tienda" }, { class: "form form-group form-control" }) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
