@@ -12,7 +12,10 @@
     <div class="card-body">
       <h5 class="custom-font">Store: <span class="h5"> <%=store.name%> </span></h5> 
       <h5 class="custom-font">Url:<span class="h5"> <%=store.url%></span></h5> 
-      <h5 class="custom-font">Adress:<span class="h5"> <%=store.address%></span></h5> 
+
+      <h5 class="custom-font">Address:<span class="h5"> 
+      <%= store.address %> </span></h5>
+
          <div class="card-footer">
           <%= link_to 'Show', store %></td>
           <%= link_to 'Edit', edit_store_path(store) %></td>
