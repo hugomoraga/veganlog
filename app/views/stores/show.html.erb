@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container">
+    <div class="card">
+        <div class="card-body p-2">
+            <div class="card-text p-2"><%= @store.name %> </div>
+            <div class="card-text p-2""><%= @store.url %> </div>
+            <div class="card-text p-2""><%= @store.addresses.first.name %> </div>
+        </div>
+    </div>
+</div>
+
 <%= link_to 'Edit', edit_store_path(@store) %> |
 <%= link_to 'Back', stores_path %>

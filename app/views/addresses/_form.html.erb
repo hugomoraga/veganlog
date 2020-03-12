@@ -38,31 +38,30 @@
 
 
 
-<script src=<%= google_maps_api_autocomplete_url %> async defer></script>
-<script>
 
+<script src="<%= google_maps_api_autocomplete_url %>" async defer></script>
 
+<script type="text/javascript">
+  function initializeAutocomplete(){
+    var input = document.getElementById('locality');
+    // var options = {
+    //   types: ['(regions)'],
+    //   componentRestrictions: {country: "IN"}
+    // };
+    var options = {}
 
-var placeSearch, autocomplete;
-  var componentForm = {
-    street_number: 'short_name',
-    route: 'long_name',
-    locality: 'long_name',
-    administrative_area_level_1: 'short_name',
-    country: 'long_name',
-    postal_code: 'short_name'
-  };
+    var autocomplete = new google.maps.places.Autocomplete(input, options);
 
-function initAutocomplete() {
-  // Create the autocomplete object, restricting the search to geographical
-  // location types.
-  autocomplete = new google.maps.places.Autocomplete(
-    /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-    {types: ['geocode']});
-
-  // When the user selects an address from the dropdown, populate the address
-  // fields in the form.
-  autocomplete.addListener('place_changed');
-}
-
+    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+      var place = autocomplete.getPlace();
+      var lat = place.geometry.location.lat();
+      var lng = place.geometry.location.lng();
+      var placeId = place.place_id;
+      // to set city name, using the locality param
+      
+      document.getElementById("latitude").value = lat;
+      document.getElementById("longitude").value = lng;
+      document.getElementById("location_id").value = placeId;
+    });
+  }
 </script>
