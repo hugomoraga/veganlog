@@ -8,7 +8,7 @@ module GoogleMapsHelper
     end
 
     def google_maps_api_autocomplete_url
-      "https://maps.googleapis.com/maps/api/js?key=#{google_maps_api_key}&libraries=places&callback=initAutocomplete"
+      "https://maps.googleapis.com/maps/api/js?key=#{google_maps_api_key}&libraries=places"
     end
 
     

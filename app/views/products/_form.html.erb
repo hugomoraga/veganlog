@@ -17,53 +17,55 @@
   <form>
 
     <div class="form-group">
-    <%= form.label :Nombre, class: 'h4 custom-font' %>
+    <%= form.label :Nombre, class: 'h5 custom-font' %>
     <%= form.text_field :productname, class: 'form-control' %>
     </div>
 
   <div class="form-group">
-    <%= form.label :'Nombre Comercial', class: 'h4 custom-font' %>
+    <%= form.label :'Nombre Comercial', class: 'h5 custom-font' %>
     <%= form.text_field :comercialName, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= form.label :Marca, class: 'h4 custom-font' %>
+    <%= form.label :Marca, class: 'h5 custom-font' %>
     <%= form.text_field :markName, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= form.label :Precio, class: 'h4 custom-font' %>
+    <%= form.label :Precio, class: 'h5 custom-font' %>
     <%= form.text_field :price, class: 'form-control'  %>
   </div>
 
   <div class="form-group">
-    <%= form.label :Ingredientes, class: 'h4 custom-font' %>
+    <%= form.label :Ingredientes, class: 'h5 custom-font' %>
     <%= form.text_field :ingredients, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= form.label :Descripcion, class: 'h4 custom-font' %>
+    <%= form.label :Descripcion, class: 'h5 custom-font' %>
     <%= form.text_field :description, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :Tienda, class: 'h4 custom-font' %>
-    <%= form.text_field :store_id, class: 'form-control' %>
-  </div>
+
 
   <div class="form-group">
-    <%= form.label :totalScore, class: 'h4 custom-font' %>
+    <%= form.label :totalScore, class: 'h5 custom-font' %>
     <%= form.text_field :totalScore, class: 'form-control' %>
   </div>
 
 
   <div class="form-group">
-  <%= form.label :Categoria, class: 'h4 custom-font'  %> <br>
+  <%= form.label :Categoria, class: 'h5 custom-font'  %> <br>
     <%= form.select(:category_id, options_for_select(Category.pluck(:name, :id)), { prompt: "Seleccionar Categoria" }, { class: "form form-group form-control" }) %>
+  </div>
+
+    <div class="form-group">
+  <%= form.label :Tienda, class: 'h5 custom-font'  %> <br>
+    <%= form.select(:store_id, options_for_select(Store.pluck(:name, :id)), { prompt: "Seleccionar Tienda" }, { class: "form form-group form-control" }) %>
   </div>
   
   <div class="form-group">
-<%= form.label :Imagen, class: 'h4 custom-font'  %> <br>
+<%= form.label :Imagen, class: 'h5 custom-font'  %> <br>
 <%= form.file_field :image, class: 'btn btn-info' %>
 </div>
  <br>

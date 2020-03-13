@@ -1,11 +1,3 @@
-<% provide :head_tags do %>
-  <meta name='turbolinks-visit-control' content='reload'>
-  <script>
-    document.addEventListener("DOMContentLoaded", function(){
-      initMap(<%=@address.latitude%>, <%=@address.longitude%>)
-    });
-  </script>
-<% end %>
 
 <div class="container">
 <p id="notice"><%= notice %></p>
@@ -39,3 +31,13 @@
 <%= link_to 'Back', addresses_path %>
 
 </div>
+
+
+<% provide :head_tags do %>
+  <meta name='turbolinks-visit-control' content='reload'>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      initMap(<%=@address.latitude%>, <%=@address.longitude%>)
+    });
+  </script>
+<% end %>

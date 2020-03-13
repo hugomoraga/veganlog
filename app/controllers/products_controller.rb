@@ -93,6 +93,10 @@ def set_categories
   @categories_array = Category.order(:name).pluck(:name, :id)
 end
 
+def set_stores
+  @stores_array = Store.order(:name).pluck(:name, :id)
+end
+
 # Only allow a list of trusted parameters through.
 def product_params
   params.require(:product).permit(:productname, :comercialName, :markName, :price, :ingredients, :description, :image, :totalScore, :store_id, :category_id, :user_id)

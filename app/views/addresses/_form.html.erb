@@ -1,10 +1,3 @@
-<% provide :head_tags do %>
-    <meta name='turbolinks-visit-control' content='reload'>
-    <script>
-        document.addEventListener("DOMContentLoaded", initMap2);
-    </script>
-<% end %>
-
 <%= form_with(model: address, local: true) do |form| %>
   <% if address.errors.any? %>
     <div id="error_explanation">
@@ -18,13 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :direccion %>
-    <%= form.text_field :name, id:'autocomplete', placeholder:"Enter your address", onFocus:"geolocate()", type:"text", class:"form-control" %>
-  </div>
-
-
-
+  <div class="form-group">
+    <%= form.label :direccion, class: 'h4' %>
+    <%= form.text_field :name, placeholder:"Enter your address", onFocus:"initializeAutocomplete()", id:"locality", class:"form-control" %>
+    </div>
 
     <div class="form-group">
   <%= form.label :Tiendas, class: 'h4 custom-font'  %> <br>
@@ -36,12 +26,12 @@
   </div>
 <% end %>
 
-
-
-
 <script src="<%= google_maps_api_autocomplete_url %>" async defer></script>
 
-<script type="text/javascript">
+<script type="text/javascript"> 
+
+// AUTOCOMPLETADO DE DIRECCIONES //
+
   function initializeAutocomplete(){
     var input = document.getElementById('locality');
     // var options = {
@@ -58,7 +48,6 @@
       var lng = place.geometry.location.lng();
       var placeId = place.place_id;
       // to set city name, using the locality param
-      
       document.getElementById("latitude").value = lat;
       document.getElementById("longitude").value = lng;
       document.getElementById("location_id").value = placeId;

@@ -1,36 +1,124 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-<h1>Tiendas</h1>
+<div>
 
-    
-  
-
-  <div class="card border-success mb-3">
-      <% @stores.each do |store| %>
-      <div class="card m-2">
-    <div class="card-body">
-      <h5 class="custom-font">Store: <span class="h5"> <%=store.name%> </span></h5> 
-      <h5 class="custom-font">Link: <span class="h5"> <%=store.url%> </span></h5> 
-      <h5 class="custom-font">Ubicacion: <span class="h5"> store.addresses.first.name </span></h5> 
+  <div class="container">
+   
+    <h1>Tiendas</h1>
+ 
+    <% @stores.each do |store| %>
+      <div class="card mb-3">
+        <div class="row no-gutters">
 
 
-         <div class="card-footer">
-          <%= link_to 'Show', store %></td>
-          <%= link_to 'Edit', edit_store_path(store) %></td>
-          <%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <div class="col-md-6">
+            <div class="card-body">
+              <h5 class="card-title"><span class="strong"> <%=store.name%> </span></h5>
+              <p class="card-text"> <span class="h5"> <%= link_to nil, store.url %> </span></h5> </p>
+            </div>
+                <div class="card-footer">
+                  <%= link_to 'Show', store %>
+                  <%= link_to 'Edit', edit_store_path(store) %>
+                  <%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %>
+               </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="card-body">
+
+            <h5 class="card-title m-1">Direcciones</h5>
+          <div class="card m-2">
+            <% store.addresses.each do |address| %>
+             <div class="row p-2">
+              <div class="col-9">
+              <h6 class="card-text m-1"><%= address.name %> </div> 
+              <div class="col-1">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-lat='<%= address.latitude %>' data-lng='<%= address.longitude %>'>Mapa</button></span></h6>
+              </div>
+              </div>
+            <% end %>
+          </div>
+          </div>
+          </div>
+       </div>
+      </div>
+    <% end %>
+
+    <%= link_to 'New Store', new_store_path %>
+  </div>
+
+
+
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"></h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12 modal_body_content">
+              <p></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 modal_body_map">
+              <div class="location-map" id="location-map">
+                <div style="width: 600px; height: 400px;" id="map_canvas"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 modal_body_end">
+            </div>
+          </div>
         </div>
       </div>
-      </div>
-      <% end %> 
     </div>
+  </div>
 
+<!--SCRIPT GMAP CON MODAL-->
 
+  <script>
+$(document).ready(function() {
+  var map = null;
+  var myMarker;
+  var myLatlng;
 
-   
+  function initializeGMap(lat, lng) {
+    myLatlng = new google.maps.LatLng(lat, lng);
 
+    var myOptions = {
+      zoom: 15,
+      zoomControl: true,
+      center: myLatlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
 
+    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
-<%= link_to 'New Store', new_store_path %>
+    myMarker = new google.maps.Marker({
+      position: myLatlng
+    });
+    myMarker.setMap(map);
+  }
 
-</div>
+  // Re-init map before show modal
+  $('#myModal').on('show.bs.modal', function(event) {
+    var button = $(event.relatedTarget);
+    initializeGMap(button.data('lat'), button.data('lng'));
+    $("#location-map").css("width", "100%");
+    $("#map_canvas").css("width", "100%");
+  });
+
+  // Trigger map resize event after modal shown
+  $('#myModal').on('shown.bs.modal', function() {
+    google.maps.event.trigger(map, "resize");
+    map.setCenter(myLatlng);
+  });
+});
+
+</script>
