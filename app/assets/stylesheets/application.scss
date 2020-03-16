@@ -14,6 +14,16 @@
 *= require_self
 */
 
+ul{
+  list-style:none; 
+}
+html{
+  position:relative; 
+  min-height: 100%;
+}
+/*Normalize html and body elements,this style is just good to have*/
+
+
 body {
 background: url("background.jpg"); 
 background-repeat: repeat;
@@ -31,7 +41,7 @@ font-family: 'Quicksand', sans-serif;
 
 .custom-font {
     font-family: 'Quicksand', sans-serif;
-    color: #666666;
+    color: #008080;
     font-weight: bold;
     text-shadow: 2px 2px 4px white;
 }
@@ -42,17 +52,10 @@ font-family: 'Quicksand', sans-serif;
   font-weight: bold;
   text-shadow: 2px 2px 4px white;
 }
+
 h1 {
   font-size: 50px;
 }
-
-/* .card-img-top {
-    width: 80%;
-    height: 18vw;
-    object-fit: cover;
-
-} */
-
 
 IMG.displayed {
     display: block;

@@ -2,9 +2,11 @@
 
 <div>
 
-  <div class="container">
-   
-    <h1>Tiendas</h1>
+  <div class="container pb-5">
+  <div>
+    <h1 class="text-center custom-font p-3">Tiendas</h1>
+    <%= link_to 'Nueva Tienda', new_store_path, :class => 'btn btn-info m-3'%>
+    </div>
  
     <% @stores.each do |store| %>
       <div class="card mb-3">
@@ -26,7 +28,7 @@
           <div class="col-md-6">
             <div class="card-body">
 
-            <h5 class="card-title m-1">Direcciones</h5>
+            <span><h5 class="card-title m-1">Direcciones</h5>
           <div class="card m-2">
             <% store.addresses.each do |address| %>
              <div class="row p-2">
@@ -44,7 +46,6 @@
       </div>
     <% end %>
 
-    <%= link_to 'New Store', new_store_path %>
   </div>
 
 

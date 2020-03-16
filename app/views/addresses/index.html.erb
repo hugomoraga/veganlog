@@ -1,6 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Addresses</h1>
+<div class="container">
+
+  <h1 class="text-center custom-font">Addresses</h1>
+  <%= link_to 'New Address', new_address_path, :class => 'btn btn-info m-3' %>
+
+
+  <div class="row pb-5">
+    <div class="card p-2">
 
 <table>
   <thead>
@@ -27,7 +34,8 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
-<br>
+</div>
 
-<%= link_to 'New Address', new_address_path %>
+</div>

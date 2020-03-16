@@ -1,6 +1,6 @@
 class Store < ApplicationRecord
-    has_and_belongs_to_many :products
-    has_many :addresses
+    has_many :products, dependent: :destroy
+    has_many :addresses, dependent: :destroy
     accepts_nested_attributes_for :addresses, allow_destroy: true
 
 end

@@ -32,9 +32,6 @@ class AddressesController < ApplicationController
     @address.latitude = Geocoder.coordinates(@address_name)[0]
     @address.longitude = Geocoder.coordinates(@address_name)[1]
 
-
-
-
     respond_to do |format|
       if @address.save
         format.html { redirect_to @address, notice: 'Address was successfully created.' }
