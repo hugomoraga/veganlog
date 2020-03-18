@@ -1,6 +1,5 @@
-    <h1 class="text-center custom-font p-3">Busqueda</h1>
+    <h1 class="text-center custom-font">Busqueda</h1>
       <div id="search">
-      <p id="notice"><%= notice %></p>
 
         <form>
           <div class="form-group mx-auto" style="max-width: 50vw;">
@@ -18,15 +17,15 @@
       <% @products_last .each do |product| %>
        <div class="PriceBlock-container">
           <div class="PriceBlock m-1">
-            <div class="PriceBlock-top">
               <div class="card-img-top">
-                <%= image_tag product.image.variant(resize: '150x150') %>
+              <% if product.image.attached? %>
+              <%= image_tag product.image.variant(resize: '200x220') %>
+              <% end %>
                </div>
-            </div>
-              <div class="card p-1" style="height: 100px;">
+              <div class="card p-1" style="height: 180px;">
                 <p class="card-title"><%=product.productname %></p>
+                <p class="card-text"> <%=product.description %></p>
                 <p class="card-text"><%=product.comercialName %> </p>
-                <p class="card-text description"> <%=product.description %></p>
 
               </div>
                <%= link_to 'Edit', edit_product_path(product) %>

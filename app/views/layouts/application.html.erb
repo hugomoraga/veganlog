@@ -3,38 +3,51 @@
 <html>
   <head>
     <title>Veganlog</title>
+
+    <!--TAG RAILS-->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS CDN -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand&display=swap">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- CSS -->
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    
+    <!-- CSS INTERNO-->
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <!-- SCRIPT-->
     <script src="<%= google_maps_api_autocomplete_url %>" async defer></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-        <%= yield(:head_tags) %>
+    <%= yield(:head_tags) %>
   </head>
-
-
+  
   <body>
+    <!-- NAVBAR-->
+    <%= render 'shared/navbar'%>
+    
+    <!-- CONTENEDOR -->
+    <div class="container-fluid">
 
-<%= render 'shared/navbar'%>
-<div class="container-fluid">
-<%= yield %>
+      <!--NOTIFICACIONES -->
+      <%= render 'shared/notify'%>
 
-</div>
+      <!-- VISTAS -->
+      <%= yield %>
 
-  
-
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
- 
-  <footer>
-  <div class="footer-copyright text-center bg-dark text-light py-3"> <%= link_to image_tag("veganlog_navbar.png", height: '25'), root_path %> by Hugo Moraga. Todos los Derechos Reservados.</div>
-  
-  </footer>
+    </div>
+      
+       <!-- SCRIPT -->
+       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      
+      
+      <!-- FOOTER -->
+    <footer>
+      <div class="footer-copyright text-center bg-dark text-light py-3"> <%= link_to image_tag("veganlog_navbar.png", height: '25'), root_path %> by Hugo Moraga. Todos los Derechos Reservados.</div>
+    </footer>
 
   </body>
 

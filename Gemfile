@@ -42,7 +42,7 @@ gem 'jquery-rails'
 gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'geocoder'
-gem 'bootstrap_notify', :git => "https://github.com/jclay/bootstrap-notify-gem.git"
+gem 'bootstrap_notify_gem'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

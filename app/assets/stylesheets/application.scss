@@ -98,18 +98,6 @@ $white: rgb(255, 255, 255);
   content: "";
   pointer-events: none;
 }
-
-// .PriceBlocks-sliderContainer:before {
-  //   left: 0;
-  //   background: linear-gradient(90deg, #70eea4, hsla(0, 0%, 100%, 0));
-  // } #ff
-  
-  // .PriceBlocks-sliderContainer:after {
-    //   right: 0;
-    //   background: linear-gradient(90deg, hsla(0, 0%, 100%, 0), #70eea4);
-    // }
-    
-    //PriceBlocks-slider
     .PriceBlocks-slider {
       transition: opacity .5s ease-in-out;
     }
@@ -131,7 +119,7 @@ $white: rgb(255, 255, 255);
       position: relative;
       overflow: hidden;
       padding: 32px 16px;
-      width: 240px;
+      width: 350px;
       border: 1px solid $primary;
       transition: padding .4s ease-in-out;
     }
@@ -258,7 +246,7 @@ $white: rgb(255, 255, 255);
       bottom: -40px;
     }
     .flickity-viewport {
-      height: 500px !important;
+      height: 400px !important;
     }
     
     .flickity-page-dots .dot {
@@ -283,5 +271,3 @@ $white: rgb(255, 255, 255);
       text-shadow: 1px 1px 5px black;
     }
     
-    
-  
