@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   resources :categories
   resources :products
   post 'stores/:store_id/addresses', to: 'address_stores#create', as: 'stores_addresses'
-  delete 'movies/:movie_id/tags/:tag_id', to: 'movies_tags#destroy', as: 'delete_movie_tag'
-
 
 
   root "products#index"

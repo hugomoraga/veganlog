@@ -1,6 +1,7 @@
 class AddressesController < ApplicationController
   before_action :set_address, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  load_and_authorize_resource :except => [:index, :show]
   # GET /addresses
   # GET /addresses.json
   def index

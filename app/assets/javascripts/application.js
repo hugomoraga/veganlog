@@ -10,11 +10,13 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
-//= require activestorage
-//= require turbolinks
 //= require jquery/dist/jquery
+//= require popper.js/dist/umd/popper
+//= require bootstrap/dist/js/bootstrap
+//= require rails-ujs
 //= require flickity/dist/flickity.pkgd.js
+//= require turbolinks
 //= require_tree .
 
+    /*CARRUSEL CON CARTAS*/
 

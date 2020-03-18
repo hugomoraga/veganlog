@@ -4,5 +4,7 @@ class Product < ApplicationRecord
     has_one_attached :image
     has_and_belongs_to_many :stores
     accepts_nested_attributes_for :stores, allow_destroy: true 
+    resourcify
+
 end
 

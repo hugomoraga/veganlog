@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  load_and_authorize_resource :except => [:index, :show]
+
+
   #before_action :set_categories, only: [:new, :edit, :create]
   
   
@@ -40,6 +43,8 @@ end
 
 # GET /products/1/edit
 def edit
+  
+
 end
 
 # POST /products

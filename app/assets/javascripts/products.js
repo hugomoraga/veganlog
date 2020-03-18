@@ -1,16 +1,6 @@
-$(document).ready(function(){
-    $('#getButton').click(function() {
-        
-        //fetch comments from server
-        $.ajax({
-            type: "GET",
-            url: "/products",
-            dataType: "script"
-        });
-        
-    })
-    
-    
+
+    /*FILTRO DE PRODUCTOS*/
+
     
     var searchRequest = null;
     
@@ -40,4 +30,3 @@ $(document).ready(function(){
         });
     });
     
-})
