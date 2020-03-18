@@ -22,7 +22,7 @@ Category.where(name: 'Proteinas').first_or_create
 
 
 user = User.new(
-    email: 'admin@venganlog.ml',
+    email: 'admin@veganlog.ml',
     name: 'administrador' 
     password: '12345678', 
     password_confirmation: '12345678'

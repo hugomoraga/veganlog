@@ -14,36 +14,43 @@
 *= require_self
 */
 
+
+
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  background: url("background.jpg"); 
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  margin-bottom: 60px;
+}
+footer {
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+}
+
+
 ul{
   list-style:none; 
 }
-html{
-  position:relative; 
-  min-height: 100%;
-}
-/*Normalize html and body elements,this style is just good to have*/
-
-
-body {
-background: url("background.jpg"); 
-background-repeat: repeat;
-background-attachment: fixed;
-background-size: 100vw;
-font-family: 'Quicksand', sans-serif;
-
-}
 
 .card-custom {
-    -webkit-box-shadow: 3px 2px 6px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 3px 2px 6px 0px rgba(0,0,0,0.75);
-    box-shadow: 3px 2px 6px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 3px 2px 6px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 2px 6px 0px rgba(0,0,0,0.75);
+  box-shadow: 3px 2px 6px 0px rgba(0,0,0,0.75);
 }
 
 .custom-font {
-    font-family: 'Quicksand', sans-serif;
-    color: #008080;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px white;
+  font-family: 'Quicksand', sans-serif;
+  color: #008080;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px white;
 }
 
 .custom-font-white {
@@ -54,26 +61,26 @@ font-family: 'Quicksand', sans-serif;
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 40px;
 }
 
 IMG.displayed {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
 .box-form {
-
-justify-content: center;
-width: 50vw;
-padding: 50px;
-margin: 20px;
+  
+  justify-content: center;
+  width: 50vw;
+  padding: 50px;
+  margin: 20px;
 }
 .card {
-overflow: hidden;
-text-overflow: ellipsis; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
 }
 
 //Vars
@@ -93,187 +100,188 @@ $white: rgb(255, 255, 255);
 }
 
 // .PriceBlocks-sliderContainer:before {
-//   left: 0;
-//   background: linear-gradient(90deg, #70eea4, hsla(0, 0%, 100%, 0));
-// } #ff
-
-// .PriceBlocks-sliderContainer:after {
-//   right: 0;
-//   background: linear-gradient(90deg, hsla(0, 0%, 100%, 0), #70eea4);
-// }
-
-//PriceBlocks-slider
-.PriceBlocks-slider {
-  transition: opacity .5s ease-in-out;
-}
-
-//PriceBlock-container
-.PriceBlock-container {
-  top: 50%;
-  padding: 16px 0;
-  transform: translateY(-50%);
-}
-
-.PriceBlock-container+.PriceBlock-container {
-  margin-left: -1px;
-}
-
-//PriceBlock
-.PriceBlock {
-  background: $white;
-  position: relative;
-  overflow: hidden;
-  padding: 32px 16px;
-  width: 240px;
-  border: 1px solid $primary;
-  transition: padding .4s ease-in-out;
-}
-
-//PriceBlock-top
-.PriceBlock-top {
-  text-align: center;
-  font-weight: 800;
-}
-
-.u-flexCenter {
-  justify-content: center!important;
-}
-
-.u-flex,
-.u-flexDeepMatch > * {
-  display: flex;
-}
-
-.u-flex {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.PriceBlock-price {
-  align-items: baseline;
-  font-size: 64px;
-  line-height: 1;
-  transition: transform 0.25s cubic-bezier(1, 0, 0, 1);
-  transform: scale(.75);
-}
-
-.PriceBlocks-slider .PriceBlock-container.is-selected .PriceBlock-dollar,
-.PriceBlocks-slider .PriceBlock-container.is-selected .PriceBlock-price {
-  transform: scale(1);
-}
-
-.PriceBlocks-slider .PriceBlock-container.is-selected .PriceBlock-list {
-  transform: translateX(-50%) scale(1);
-}
-
-.PriceBlock-list {
-  position: relative;
-  left: 50%;
-  display: inline-block;
-  transition: transform 0.4s ease-in-out;
-  transform: translateX(-50%) scale(.85);
-  margin-top: 16px;
-}
-
-.u-textLarge {
-  font-size: 20px!important;
-}
-
-.u-textPrimary {
-  color: $primary!important;
-}
-
-.PriceBlock-dollar {
-  align-self: flex-start;
-  margin-right: 4px;
-  font-size: 30px;
-}
-
-.PriceBlock-time {
-  margin-left: 4px;
-  font-size: 20px;
-}
-
-.PriceBlocks-slider .PriceBlock:before {
-  box-shadow: inset -15px 0 30px -15px rgba(0, 105, 255, .5);
-  transform: translateX(100%);
-}
-
-.PriceBlocks-slider .PriceBlock:after {
-  box-shadow: inset 15px 0 30px -15px rgba(0, 105, 255, .5);
-  transform: translateX(-100%);
-}
-
-.PriceBlock-container.is-next .PriceBlock:after,
-.PriceBlock-container.is-previous .PriceBlock:before {
-  transform: translateX(0);
-}
-
-.PriceBlocks-slider .PriceBlock:after,
-.PriceBlocks-slider .PriceBlock:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content: "";
-  transition: transform .25s cubic-bezier(1, 0, 0, 1);
-}
-
-.PriceBlocks-slider .PriceBlock-container.is-selected .PriceBlock {
-  padding-top: 48px;
-  padding-bottom: 48px;
-}
-
-//PrevNext
-.flickity-prev-next-button {
-  width: 100px;
-  height: 100px;
-  background: transparent;
-  z-index: 400;
-}
-
-.flickity-prev-next-button:hover {
-  background: transparent;
-}
-
-.flickity-prev-next-button .arrow {
-  fill: $primary;
-}
-
-.flickity-prev-next-button.no-svg {
-  color: $primary;
-}
-
-//Page Dots
-.flickity-page-dots {
-  bottom: -40px;
-}
-.flickity-viewport {
-  height: 500px !important;
-}
-
-.flickity-page-dots .dot {
-  width: 12px;
-  height: 12px;
-  opacity: 1;
-  background: transparent;
-  border: 1px solid $primary;
-  transition: all .4s ease-in-out;
-}
-
-.flickity-page-dots .dot.is-selected {
-  background: $primary;
-}
-
-
-/*Font Attributes*/
-.navbar li a {
-  font-size: 16px;
-  font-weight: 800;
-  color: white !important;
-  text-shadow: 1px 1px 5px black;
-}
-
-
+  //   left: 0;
+  //   background: linear-gradient(90deg, #70eea4, hsla(0, 0%, 100%, 0));
+  // } #ff
+  
+  // .PriceBlocks-sliderContainer:after {
+    //   right: 0;
+    //   background: linear-gradient(90deg, hsla(0, 0%, 100%, 0), #70eea4);
+    // }
+    
+    //PriceBlocks-slider
+    .PriceBlocks-slider {
+      transition: opacity .5s ease-in-out;
+    }
+    
+    //PriceBlock-container
+    .PriceBlock-container {
+      top: 50%;
+      padding: 16px 0;
+      transform: translateY(-50%);
+    }
+    
+    .PriceBlock-container+.PriceBlock-container {
+      margin-left: -1px;
+    }
+    
+    //PriceBlock
+    .PriceBlock {
+      background: $white;
+      position: relative;
+      overflow: hidden;
+      padding: 32px 16px;
+      width: 240px;
+      border: 1px solid $primary;
+      transition: padding .4s ease-in-out;
+    }
+    
+    //PriceBlock-top
+    .PriceBlock-top {
+      text-align: center;
+      font-weight: 800;
+    }
+    
+    .u-flexCenter {
+      justify-content: center!important;
+    }
+    
+    .u-flex,
+    .u-flexDeepMatch > * {
+      display: flex;
+    }
+    
+    .u-flex {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    
+    .PriceBlock-price {
+      align-items: baseline;
+      font-size: 64px;
+      line-height: 1;
+      transition: transform 0.25s cubic-bezier(1, 0, 0, 1);
+      transform: scale(.75);
+    }
+    
+    .PriceBlocks-slider .PriceBlock-container.is-selected .PriceBlock-dollar,
+    .PriceBlocks-slider .PriceBlock-container.is-selected .PriceBlock-price {
+      transform: scale(1);
+    }
+    
+    .PriceBlocks-slider .PriceBlock-container.is-selected .PriceBlock-list {
+      transform: translateX(-50%) scale(1);
+    }
+    
+    .PriceBlock-list {
+      position: relative;
+      left: 50%;
+      display: inline-block;
+      transition: transform 0.4s ease-in-out;
+      transform: translateX(-50%) scale(.85);
+      margin-top: 16px;
+    }
+    
+    .u-textLarge {
+      font-size: 20px!important;
+    }
+    
+    .u-textPrimary {
+      color: $primary!important;
+    }
+    
+    .PriceBlock-dollar {
+      align-self: flex-start;
+      margin-right: 4px;
+      font-size: 30px;
+    }
+    
+    .PriceBlock-time {
+      margin-left: 4px;
+      font-size: 20px;
+    }
+    
+    .PriceBlocks-slider .PriceBlock:before {
+      box-shadow: inset -15px 0 30px -15px rgba(0, 105, 255, .5);
+      transform: translateX(100%);
+    }
+    
+    .PriceBlocks-slider .PriceBlock:after {
+      box-shadow: inset 15px 0 30px -15px rgba(0, 105, 255, .5);
+      transform: translateX(-100%);
+    }
+    
+    .PriceBlock-container.is-next .PriceBlock:after,
+    .PriceBlock-container.is-previous .PriceBlock:before {
+      transform: translateX(0);
+    }
+    
+    .PriceBlocks-slider .PriceBlock:after,
+    .PriceBlocks-slider .PriceBlock:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      transition: transform .25s cubic-bezier(1, 0, 0, 1);
+    }
+    
+    .PriceBlocks-slider .PriceBlock-container.is-selected .PriceBlock {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+    
+    //PrevNext
+    .flickity-prev-next-button {
+      width: 100px;
+      height: 100px;
+      background: transparent;
+      z-index: 400;
+    }
+    
+    .flickity-prev-next-button:hover {
+      background: transparent;
+    }
+    
+    .flickity-prev-next-button .arrow {
+      fill: $primary;
+    }
+    
+    .flickity-prev-next-button.no-svg {
+      color: $primary;
+    }
+    
+    //Page Dots
+    .flickity-page-dots {
+      bottom: -40px;
+    }
+    .flickity-viewport {
+      height: 500px !important;
+    }
+    
+    .flickity-page-dots .dot {
+      width: 12px;
+      height: 12px;
+      opacity: 1;
+      background: transparent;
+      border: 1px solid $primary;
+      transition: all .4s ease-in-out;
+    }
+    
+    .flickity-page-dots .dot.is-selected {
+      background: $primary;
+    }
+    
+    
+    /*Font Attributes*/
+    .navbar li a {
+      font-size: 16px;
+      font-weight: 800;
+      color: white !important;
+      text-shadow: 1px 1px 5px black;
+    }
+    
+    
+  
