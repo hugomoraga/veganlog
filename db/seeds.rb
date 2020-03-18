@@ -12,6 +12,8 @@ User.destroy_all
 Store.destroy_all
 Address.destroy_all
 
+AdminUser.create!(email: 'activeadmin@veganlog.ml', password:'admin', password_confirmation:'admin') if Rails.env.development?
+
 Category.where(name: 'Hamburguesas').first_or_create
 Category.where(name: 'Embutidos').first_or_create
 Category.where(name: 'Bebidas').first_or_create
@@ -60,3 +62,4 @@ p1.image.attach(io: File.open('./app/assets/images/product.jpg'), filename: "pla
 
 
 
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
