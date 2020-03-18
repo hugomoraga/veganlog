@@ -17,6 +17,5 @@
 //= require flickity/dist/flickity.pkgd.js
 //= require turbolinks
 //= require_tree .
-//= require active_admin
 
     /*CARRUSEL CON CARTAS*/
