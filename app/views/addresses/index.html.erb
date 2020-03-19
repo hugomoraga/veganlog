@@ -25,9 +25,12 @@
                           <td><%= address.latitude %></td>
                           <td><%= address.longitude %></td>
                           <td><%= address.store.name %></td>
-                          <td><%= link_to 'Show', address %></td>
-                          <td><%= link_to 'Edit', edit_address_path(address) %></td>
-                          <td><%= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                          <td><%= link_to 'Mostrar', address %></td>
+                          <% if current_user.has_role? :admin %>
+
+                          <td><%= link_to 'Editar', edit_address_path(address) %></td>
+                          <td><%= link_to 'Eliminar', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                          <% end %>
                         </tr>
                       <% end %>
                     </tbody>

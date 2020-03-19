@@ -3,20 +3,10 @@
 
 
 // INICIA MAPA CON LAT Y LONG //
-function initMap(lat, lng) {
-    var myCoords = new google.maps.LatLng(lat, lng);
-    var mapOptions = {
-        center: myCoords,
-        zoom: 14
-    };
-
-    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-    var marker = new google.maps.Marker({
-        position: myCoords,
-        map: map
-    });
-
+function my_map_add() {
+var myMapCenter = new google.maps.LatLng(28.5383866, 77.34916609);
+var myMapProp = {center:myMapCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+var map = new google.maps.Map(document.getElementById("my_map_add"),myMapProp);
+var marker = new google.maps.Marker({position:myMapCenter});
+marker.setMap(map);
 }
-
-
