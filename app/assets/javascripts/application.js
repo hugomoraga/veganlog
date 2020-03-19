@@ -16,6 +16,7 @@
 //= require rails-ujs
 //= require flickity/dist/flickity.pkgd.js
 //= require turbolinks
+//= require cocoon
 //= require_tree .
 
     /*CARRUSEL CON CARTAS*/

@@ -1,0 +1,49 @@
+  <div class='nested-fields'>
+    <div class="form-row">
+        <div class="form-group col-md-8">
+    <%= form.text_field :name, onFocus:"initializeAutocomplete()", id:"locality", placeholder:"Enter a location", autocomplete:"on",  class:"autocomplete form-control" %>
+
+ 
+        </div>
+          <div class="col-md-4">
+            <div class="form-row">
+              <div class="form-group col-md-5">
+                <%= form.text_field :latitude, id:"latitude", placeholder:"Latitude", class:"form-control form-control-sm", style:"pointer-events: none; width:95%" %>
+              </div>
+              <div class="form-group col-md-5">
+                 <%= form.text_field :longitude, id:"longitude", placeholder:"Longitude", class:"form-control form-control-sm", style:"pointer-events: none; width:95%"%>
+              </div>
+              <div class="form-group col-md-2">
+                  <%= link_to_remove_association "X", form, class:'badge badge-warning' %>
+
+              </div>
+
+            </div>
+          </div>
+      </div>
+
+  </div>
+
+
+  <script>
+$(document).on('ready turbolinks:load', function() {
+    initializeAutocomplete = function(){
+    
+    $(".nested-fields").each(function(index) {
+        var input = $(this).find(".autocomplete")[0]
+        
+        var autocomplete = new google.maps.places.Autocomplete(input, {});
+        google.maps.event.addListener(autocomplete, 'place_changed', function() {
+            var place = autocomplete.getPlace();
+            var lat = place.geometry.location.lat();
+            var lng = place.geometry.location.lng();
+            // to set city name, using the locality param
+            document.getElementById("latitude").value = lat;
+            document.getElementById("longitude").value = lng;
+        })
+    } )
+    
+}
+});
+
+</script>

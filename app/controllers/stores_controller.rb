@@ -60,10 +60,8 @@ def set_store
 end
 
 def store_params
-  params.require(:store).permit(:name, :url, :address,
-    addresses_attributes: [
-      :id, :name, :latitude, :longitude, :_destroy, :_update
-      ])
+  params.require(:store).permit(:name, :url, :address, addresses_attributes: [:id, :name, :latitude, :longitude, :_destroy, :_update])
+
 end
 
 end

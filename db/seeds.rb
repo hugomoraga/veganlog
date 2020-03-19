@@ -12,7 +12,7 @@ User.destroy_all
 Store.destroy_all
 Address.destroy_all
 
-AdminUser.create!(email: 'activeadmin@veganlog.ml', password:'admin', password_confirmation:'admin') if Rails.env.development?
+AdminUser.create!(email: 'activeadmin@veganlog.ml', password:'password', password_confirmation:'password') if Rails.env.development?
 
 Category.where(name: 'Hamburguesas').first_or_create
 Category.where(name: 'Embutidos').first_or_create
@@ -21,17 +21,19 @@ Category.where(name: 'Aliños').first_or_create
 Category.where(name: 'Congelados').first_or_create
 Category.where(name: 'Salsas').first_or_create
 Category.where(name: 'Proteinas').first_or_create
+Category.where(name: 'Batidos').first_or_create
 
 
-user = User.new(
+
+admin = User.new(
     email: 'admin@veganlog.ml',
     name: 'administrador' 
     password: '12345678', 
     password_confirmation: '12345678'
 )
-user.save!
+admin.save!
 
-s1 = Store.create(
+organisk_store = Store.create(
     name: 'Organisk', 
     url:  'www.organisk.cl',
     addresses_attributes: [
@@ -41,6 +43,22 @@ s1 = Store.create(
             longitude: -70.611266
             
         }
+        
+    ]
+)
+
+
+casadelvegan_store = Store.create(
+    name: 'Casa del Vegan', 
+    url:  'www.organisk.cl',
+    addresses_attributes: [
+        { 
+            name: 'AAntonia Lopez de Bello 743, local 572. Recoleta, RM',
+            latitude: -33.4214971,
+            longitude: -70.611266
+            
+        }
+        
     ]
 )
 

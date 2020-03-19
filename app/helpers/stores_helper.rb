@@ -1,5 +1,4 @@
 module StoresHelper
-    
     def add_address_button(form)
         address_fields = form.fields_for(:adressess, Address.new) do |addresses_form|
             render 'addresses/addresses_fields', addresses_form: addresses_form

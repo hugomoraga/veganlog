@@ -1,5 +1,5 @@
 
-<%= form_with(model: @store) do |form| %>
+<%= form_with(model: store, local: true) do |form| %>
 
   <div class="d-flex justify-content-center">
     <div class="box-form">
@@ -15,36 +15,27 @@
 
       <div class="form-group">
         <%= form.label :direccion, class: 'h4' %>
-         <div class="actions">
-        <%= add_address_button(form) %>
-        </div>
       </div>
+
+      <h3>Direcciones</h3>
+<div id='addresses'>
+<%= form.fields_for :addresses do |addresses_form| %>
+  <%= render 'address_fields', :form => addresses_form %>
+  <% end %>
+  <div class='Links'>
+  <%= link_to_add_association 'add Direccion', form, :addresses, form_name: 'form' %>
+  </div>
+  </div>
     
-      <ul id="lista_address">
-        <%= form.fields_for :addresses do |addresses_form| %>
-        <%= render 'addresses/addresses_fields', addresses_form: addresses_form %>
-      <% end %>
-      </ul>
-      
+  
       <div class="actions">
-        <%= form.submit nil, :class => 'btn btn-info'  %>
+        <%= form.submit %>
       </div>
       <% end %>
 
 
     </div>
   </div>
-
-<script>
-$(document).on('ready turbolinks:load', function(){
-    $('#add-address').click(function(e){
-        e.preventDefault()
-        var new_address =$(this).data('address')
-        //$(new_address).insertAfter('ul')
-        $('#lista_address').append(new_address)
-    })
-})
-</script>
 
 
 
