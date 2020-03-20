@@ -16,6 +16,8 @@
               <h5 class="card-title custom-font">Precio:<span class="h5"> $ <%=@product.price %></span></h5>
               <h5 class="card-title custom-font">Categoria:<span class="h5"> <%=@product.category.name  %></span></h5>
               <h5 class="card-title custom-font">Ingredientes:<span class="h5"> <%=@product.ingredients  %></span></h5>
+              <h5 class="card-title custom-font">Tienda:<span class="h5"> <%= store_find(@product).name  %></span></h5>
+
               <h5 class="card-title custom-font">Puntuacion<span class="h5"> <div id="rating-form"></div></span></h5>
             </div>
           </div>

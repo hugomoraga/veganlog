@@ -5,4 +5,5 @@ class Store < ApplicationRecord
     reject_if: -> (attributes) {attributes['name'].blank?}
     validates_presence_of :name
 
+    
 end

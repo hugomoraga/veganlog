@@ -12,6 +12,13 @@ module StoresHelper
         }
         content_tag(:button, '+Add', html_options)
     end
-    
+
+    def store_find(product)
+        Store.find(product.store_id)
+    end
+
+    def adresseses_by_store(product)
+        Store.find(product.store_id).addresses
+    end
     
 end
