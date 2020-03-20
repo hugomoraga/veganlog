@@ -34,6 +34,17 @@ admin = User.new(
     password_confirmation: '12345678'
 )
 admin.save!
+admin.add_role :admin
+
+#USUARIO SIN PRIVILEGIOS PARA CREAR/EDITAR/ELIMINAR
+usuario = User.new(
+    email: 'nuevo@usuario.cl',
+    name: 'nuevo',
+    password: '12345678', 
+    password_confirmation: '12345678'
+)
+usuario.save!
+
 
 #CREACION DE TIENDA Y DIRECCION (MODELO ANIDADO)
 organisk_store = Store.create(

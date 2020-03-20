@@ -32,7 +32,7 @@ $(document).on('ready turbolinks:load', function() {
   
   var $carousel = $('.PriceBlocks-slider').flickity({
     cellSelector: '.PriceBlock-container',
-    initialIndex: 3
+    initialIndex: 2
   });
   
   var flkty = $carousel.data('flickity');
