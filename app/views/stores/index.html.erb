@@ -16,7 +16,6 @@
             <% if user_signed_in? %>
             <% if current_user.has_role? :admin %>
                 <div class="card-footer">
-                  <%= link_to 'Show', store %>
                   <%= link_to 'Edit', edit_store_path(store) %>
                   <%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %>
                </div>

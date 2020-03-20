@@ -1,6 +1,8 @@
-<h1>Editing Store</h1>
+<h2>Editar tienda</h2>
 
 <%= render 'form', store: @store %>
 
-<%= link_to 'Show', @store %> |
-<%= link_to 'Back', stores_path %>
+<div class="container">
+<%= link_to 'Show', @store, class:"p-2 btn btn-info" %> 
+<%= link_to 'Back', stores_path, class:"p-2 btn btn-info"  %>
+</div>
