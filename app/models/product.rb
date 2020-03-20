@@ -5,6 +5,8 @@ class Product < ApplicationRecord
     has_and_belongs_to_many :stores
     accepts_nested_attributes_for :stores, allow_destroy: true 
     resourcify
+    validates_presence_of :productname, :price, :ingredients, :markName
+
 
 
 end
