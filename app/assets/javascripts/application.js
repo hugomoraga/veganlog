@@ -17,6 +17,8 @@
 //= require flickity/dist/flickity.pkgd.js
 //= require turbolinks
 //= require cocoon
+//= require chartkick
+//= require Chart.bundle
 //= require_tree .
 
     /*CARRUSEL CON CARTAS*/

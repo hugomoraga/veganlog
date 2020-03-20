@@ -970,6 +970,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
+    chartkick (3.3.1)
     childprocess (3.0.0)
     chromedriver-helper (2.1.1)
       archive-zip (~> 0.10)
@@ -1000,6 +1001,8 @@ GEM
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     gmaps4rails (2.1.2)
+    groupdate (5.0.0)
+      activesupport (>= 5)
     has_scope (0.7.2)
       actionpack (>= 4.1)
       activesupport (>= 4.1)
@@ -1174,12 +1177,14 @@ DEPENDENCIES
   byebug
   cancancan
   capybara (>= 2.15)
+  chartkick
   chromedriver-helper
   cocoon
   coffee-rails (~> 4.2)
   devise
   geocoder
   gmaps4rails
+  groupdate
   image_processing (~> 1.2)
   jbuilder (~> 2.5)
   jquery-rails
