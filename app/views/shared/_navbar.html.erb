@@ -36,11 +36,12 @@
         </a>
           <div class="dropdown-menu font-submenu" style="background-color: #008080" aria-labelledby="navbarDropdownMenuLink">
          
-            <%= link_to 'Editar Perfil', edit_user_registration_path, class: 'nav-link' %>
             <% if !user_signed_in? %>
             <%= link_to 'Iniciar sesión', new_user_session_path, class: 'nav-link' %>
             <%= link_to 'Registrarse',  new_user_registration_path, class: 'nav-link'%>
+
             <% else %>
+            <%= link_to 'Editar Perfil', edit_user_registration_path, class: 'nav-link' %>
             <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: 'nav-link' %>
             <% end %>
           </div>

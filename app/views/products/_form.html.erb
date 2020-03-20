@@ -1,6 +1,6 @@
 		<div class="row justify-content-center pb-5">
 			<div class="col-lg-9">
-      <%= link_to 'Volver', products_path, :class => 'btn btn-info m-3 ' %>
+      <%= link_to 'Volver', products_path, :class => 'btn btn-info m-2 ' %>
 
        <div class="card">
          <div class="card-body">
@@ -19,64 +19,104 @@
             <% end %>
 
             <form>
-              <div class="form-group">
-                <%= form.label :Nombre, class: 'h5 custom-font' %>
-                <%= form.text_field :productname, class: 'form-control' %>
+              <div class="form-row p-2">
+                <div class="col-md-4 col-form-label">
+                  <%= form.label :Nombre, class: 'h5' %>
+                </div>
+                <div class="col-md-8">
+                  <%= form.text_field :productname, class: 'form-control' %>
+                </div>
               </div>
 
-              <div class="form-group">
-                <%= form.label :'Nombre Comercial', class: 'h5 custom-font' %>
-                <%= form.text_field :comercialName, class: 'form-control' %>
+              <div class="form-row p-2">
+                <div class="col-md-4 col-form-label">
+                  <%= form.label :'Nombre Comercial', class: 'h5' %>
+                </div>
+                <div class="col-md-8">
+                  <%= form.text_field :comercialName, class: 'form-control' %>
+                </div>
               </div>
 
-              <div class="form-group">
-                <%= form.label :Marca, class: 'h5 custom-font' %>
-                <%= form.text_field :markName, class: 'form-control' %>
+              <div class="form-row p-2">
+                <div class="col-md-4 col-form-label">
+                  <%= form.label :Marca, class: 'h5' %>
+                </div>
+                <div class="col-md-8">
+                  <%= form.text_field :markName, class: 'form-control' %>
+                </div>
               </div>
 
-              <div class="form-group">
-                <%= form.label :Precio, class: 'h5 custom-font' %>
-                <%= form.text_field :price, class: 'form-control'  %>
+              <div class="form-row p-2">
+                <div class="col-md-4 col-form-label">
+                  <%= form.label :Precio, class: 'h5' %>
+                </div>
+                <div class="col-md-8">
+                  <%= form.text_field :price, class: 'form-control'  %>
+                </div>
               </div>
 
-              <div class="form-group">
-                <%= form.label :Ingredientes, class: 'h5 custom-font' %>
-                <%= form.text_field :ingredients, class: 'form-control' %>
+              <div class="form-row p-2">
+                <div class="col-md-4 col-form-label">
+                  <%= form.label :Ingredientes, class: 'h5' %>
+                </div>
+                <div class="col-md-8">
+                  <%= form.text_field :ingredients, class: 'form-control' %>
+                </div>
               </div>
 
-              <div class="form-group">
-                <%= form.label :Descripcion, class: 'h5 custom-font' %>
-                <%= form.text_field :description, class: 'form-control' %>
+              <div class="form-row p-2">
+                <div class="col-md-4 col-form-label">
+                  <%= form.label :Descripcion, class: 'h5' %>
+                </div>
+                <div class="col-md-8">
+                  <%= form.text_field :description, class: 'form-control' %>
+                </div>
               </div>
               
-              <div class="form-group">
-                <%= form.label :Categoria, class: 'h5 custom-font'  %> <br>
-                <%= form.select(:category_id, options_for_select(Category.pluck(:name, :id)), { prompt: "Seleccionar Categoria" }, { class: "form form-group form-control" }) %>
+              <div class="form-row p-2">
+                <div class="col-md-4 col-form-label">
+                  <%= form.label :Categoria, class: 'h5'  %>
+                </div>
+                <div class="col-md-8">
+                  <%= form.select(:category_id, options_for_select(Category.pluck(:name, :id)), { prompt: "Seleccionar Categoria" }, { class: "form-control" }) %>
+                </div>
               </div>
 
-              <div class="form-group">
-                <%= form.label :Tienda, class: 'h5 custom-font'  %> <br>
-                <%= form.select(:store_id, options_for_select(Store.pluck(:name, :id)), { prompt: "Seleccionar Tienda" }, { class: "form form-group form-control" }) %>
+              <div class="form-row p-2">
+                <div class="col-md-4 col-form-label">
+                  <%= form.label :Tienda, class: 'h5'  %>
+                </div>
+                <div class="col-md-8">
+                  <%= form.select(:store_id, options_for_select(Store.pluck(:name, :id)), { prompt: "Seleccionar Tienda" }, { class: "form form-group form-control" }) %>
+                </div>
               </div>
 
-             <div class="form-group">
-
-              <div class="form-row">
-                <div class="col-md-2">
-                  <%= form.label :Puntuacion, class: 'h5 custom-font' %>
-                 
+             <div class="form-row p-2">
+                <div class="col-md-4 col-form-label">
+                  <%= form.label :Puntuacion, class: 'h5' %>
+                </div>
+                <div class="col-md-8">
                   <div id="rating-form"></div>
                 </div>
-               </div>
-               </div>
+              </div>
     
-              <div class="form-group">
-                <%= form.label :Imagen, class: 'h5 custom-font'  %> <br>
+              <div class="form-row p-2">
+                <div class="col-md-4 col-form-label">
+                  <%= form.label :Imagen, class: 'h5'  %> <br>
+                </div>
+                  <div class="col-md-8">
                 <%= form.file_field :image, class: 'btn btn-info' %>
-             
-              <span class="actions">
-                <%= form.submit 'Crear Producto', :class => 'btn btn-info m-3'  %>
-              </span>
+                </div>
+              </div>
+
+              <div class="form-row p-2">
+                <div class="col-md-4"></div>
+
+                <div class="col-md-4 col-form-label">
+                  <span class="actions">
+                    <%= form.submit 'Guardar', :class => 'btn btn-info m-3'  %>
+                  </span>
+                </div>
               </div>
           </form>
         <% end %>
@@ -94,4 +134,9 @@
     starOn : '<%= asset_path('star-on.png') %>',
     scoreName: 'product[totalScore]'
   });
+
+  var score = <%=@product.totalScore  %>
+
+  $('#rating-form').raty('setScore', score);
+
   </script>

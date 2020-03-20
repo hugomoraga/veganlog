@@ -1,26 +1,27 @@
 <!-- Carrusel JS con Cartas Bootstrap -->
 <div class="PriceBlocks-sliderContainer pb-3">
-    <div class="PriceBlocks-slider" >
-      <% @products_last .each do |product| %>
-       <div class="PriceBlock-container">
-          <div class="Block m-1">
-          <div class="Block-top">
-              <div class="card-img-top" style="height: 180px;">
+  <div class="PriceBlocks-slider" >
+    <% @products_last .each do |product| %>
+      <div class="PriceBlock-container">
+          <div class="card m-1">
+        <div class="Block">
+          <div class="Block-top" style="height: 180px;">
+            <div class="card-img-top" >
               <% if product.image.attached? %>
-              <%= image_tag product.image.variant(resize: '180x180') %>
+                  <%= link_to (image_tag product.image.variant(resize: '200x200')), product %> 
               <% end %>
-               </div>
-               </div>
-              <div class="card p-1" style="height: 150px;">
-                <p class="card-title"><%=product.productname %></p>
-                <p class="card-text"> <%=product.description %></p>
-                <p class="card-text"><%=product.comercialName %> </p>
-
-              </div>
             </div>
           </div>
-      <% end %>
-    </div>
+              <div class="card-body" style="height: 130px;">
+                <p class="card-title text-info font-weight-bold"><%=product.productname %></p>
+                <p class="card-text text-secundary"><%=product.comercialName %> </p>
+                <p class="card-text tex-secundary"> $ <%=product.price %></p>
+              </div> 
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
   
 

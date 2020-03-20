@@ -1,34 +1,46 @@
-<p id="notice"><%= notice %></p>
-
-
-
 <div class="container">
-  <div class="card mb-4 mx-auto">
-  <div class="row">
-    <div class="col-md-4 d-flex justify-content-center py-2">
-      <td><%= image_tag @product.image , class:'card-img-top displayed' %></td>
-    </div>
-        <div class="col-md-8" style="background-color: white;">
-          <div class="card-body">
-          <br>
-            <h5 class="card-title custom-font">Producto: <span class="h5"> <%=@product.productname%> </span></h5>
-            <h5 class="card-title custom-font">Nombre:<span class="h5"> <%=@product.comercialName%></span></h5>
-            <h5 class="card-title custom-font">Marca:<span class="h5"> <%=@product.markName %></span></h5>
-            <h5 class="card-title custom-font">Precio:<span class="h5"> $ <%=@product.price %></span></h5>
-            <h5 class="card-title custom-font">Categoria:<span class="h5"> <%=@product.category.name  %></h5>
-            <h5 class="card-title custom-font">Ingredientes:<span class="h5"> <%=@product.ingredients  %></h5>
-            <div class="card-footer">
+
+    <div class="row pb-5">
+
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4">
+            <%= image_tag @product.image , class:'card-img-top displayed' %>
           </div>
-            <%=link_to 'Editar', edit_product_path(@product), class: 'btn btn-outline-success custom-font-white'%>
-            <%=link_to 'Eliminar', @product,method: :delete, data:{confirm: 'Are you sure?'}, class: 'btn btn-outline-success custom-font-white'%>
-            <%=link_to 'Volver', products_path, class: 'btn btn-outline-success custom-font-white'%>
-
-            <br>
-            <p class="card-text text-right h5"><small class="text-muted">Last updated: <%=time_ago_in_words(@product.updated_at)%></small></p>
-
+          <div class="col-md-8">
+            <div class="col pt-3">
+              <h5 class="card-title custom-font">Producto: <span class="h5"> <%=@product.productname%> </span></h5>
+              <h5 class="card-title custom-font">Nombre:<span class="h5"> <%=@product.comercialName%></span></h5>
+              <h5 class="card-title custom-font">Marca:<span class="h5"> <%=@product.markName %></span></h5>
+              <h5 class="card-title custom-font">Precio:<span class="h5"> $ <%=@product.price %></span></h5>
+              <h5 class="card-title custom-font">Categoria:<span class="h5"> <%=@product.category.name  %></span></h5>
+              <h5 class="card-title custom-font">Ingredientes:<span class="h5"> <%=@product.ingredients  %></span></h5>
+              <h5 class="card-title custom-font">Puntuacion<span class="h5"> <div id="rating-form"></div></span></h5>
+            </div>
           </div>
         </div>
+          <div class="card-footer">
+            <%=link_to 'Editar', edit_product_path(@product), class: 'btn btn-outline-info custom-font-white'%>
+            <%=link_to 'Eliminar', @product,method: :delete, data:{confirm: 'Are you sure?'}, class: 'btn btn-outline-info custom-font-white'%>
+            <%=link_to 'Volver', products_path, class: 'btn btn-outline-info custom-font-white'%>
+            <p class="card-text text-right h5"><small class="text-muted">Last updated: <%=time_ago_in_words(@product.updated_at)%></small></p>
+          </div>
+    </div>
   </div>
-  </div>
- 
+ </div>
 </div>
+
+<script>
+
+$('#rating-form').raty({
+    size     : 60,
+    starOff: '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    scoreName: 'product[totalScore]'
+  });
+
+  var score = <%=@product.totalScore  %>
+  $('#rating-form').raty('setScore', score);
+
+</script>

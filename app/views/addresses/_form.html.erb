@@ -25,7 +25,7 @@
       <div class="card">
         <div class="card-body">
             <div class="form-group">
-              <%= form.text_field :name, id:"searchTextField", type:"text", size:"50", placeholder:"Enter a location", autocomplete:"on", runat:"server",  class:"form-control" %>
+              <%= form.text_field :name, onFocus:"initializeAutocomplete()", id:"searchTextField", type:"text", size:"50", placeholder:"Enter a location", autocomplete:"on", runat:"server",  class:"form-control" %>
             </div>
 
                 <div class="form-row">
@@ -54,9 +54,11 @@
 
 <!--SCRIPT AUTOCOMPLETE -->
 
-<script type="text/javascript">
-    function initialize() {
-        var input = document.getElementById('searchTextField');
+<script>
+$(document).on('turbolinks:load', function() {
+    initializeAutocomplete = function(){
+
+           var input = document.getElementById('searchTextField');
         var autocomplete = new google.maps.places.Autocomplete(input);
         google.maps.event.addListener(autocomplete, 'place_changed', function () {
             var place = autocomplete.getPlace();
@@ -66,8 +68,12 @@
             document.getElementById("longitude").value = lng;
 
         });
-    }
+    
     google.maps.event.addDomListener(window, 'load', initialize); 
+
+}
+});
+
 </script>
 
 
