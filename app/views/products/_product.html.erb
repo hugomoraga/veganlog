@@ -14,7 +14,11 @@
         <p class="card-text"><%=product.comercialName%></p>
         <p class="card-text"><%=product.ingredients%></p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        <%= link_to 'Edit', edit_product_path(product) %>
+        <% if current_user.has_role? :admin %>
+        <%= link_to 'Editar', edit_product_path(product) %>
+        <% end %>
+       <%= link_to 'Mostrar mas', product %>
+
       </div>
     </div>
   </div>

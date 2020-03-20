@@ -1,43 +1,50 @@
 
 <div class="container">
-<p id="notice"><%= notice %></p>
+  <!--Botones -->
+  <div class="row">
+    <div class="col-2"></div>
+      <div class="d-flex p-2">
+        <%= link_to 'Editar', edit_address_path(@address), class:"m-2 btn btn-info" %> 
+        <%= link_to 'Volver', addresses_path, class:"m-2 btn btn-info" %>
+      </div>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @address.name %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @address.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @address.longitude %>
-</p>
-
-<p>
-  <strong>Store:</strong>
-  <%= @address.store.name %>
-</p>
-
-
-<p>
-    <div id="map"></div>
-</p>
-
-<%= link_to 'Edit', edit_address_path(@address) %> |
-<%= link_to 'Back', addresses_path %>
-
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="card d-flex p-1 custom-font">
+      <div class="card-body">
+        <h4><strong>Tienda:</strong><%= @address.store.name %></h4>
+        <h4><strong>Direccion:</strong><%= @address.name %></h4>
+        <!--MAPA-->
+        <div id="map"></div>
+      </div>
+    </div>
+    <div class="col-2"></div>
+  </div>
 </div>
 
+<!-- script GoogleMap -->
 
-<% provide :head_tags do %>
-  <meta name='turbolinks-visit-control' content='reload'>
-  <script>
-    document.addEventListener("DOMContentLoaded", function(){
-      initMap(<%=@address.latitude%>, <%=@address.longitude%>)
-    });
-  </script>
-<% end %>
+<script>
+    window.onload = function () {
+      initialize();
+        function initialize(lat, lng) {
+          var lat = <%= @address.latitude %>;
+          var lng = <%= @address.longitude %>
+
+          var myCoords = new google.maps.LatLng(lat, lng);
+          var mapOptions = {
+          center: myCoords,
+          zoom: 14
+          };
+          var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+          var marker = new google.maps.Marker({
+          position: myCoords,
+          map: map
+          });
+    }
+  }
+</script>
+
+
+      

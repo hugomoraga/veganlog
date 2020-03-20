@@ -27,7 +27,7 @@ Category.where(name: 'Batidos').first_or_create
 
 admin = User.new(
     email: 'admin@veganlog.ml',
-    name: 'administrador' 
+    name: 'administrador',
     password: '12345678', 
     password_confirmation: '12345678'
 )

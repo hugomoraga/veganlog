@@ -50,11 +50,6 @@
               </div>
               
               <div class="form-group">
-                <%= form.label :totalScore, class: 'h5 custom-font' %>
-                <%= form.text_field :totalScore, class: 'form-control' %>
-              </div>
-              
-              <div class="form-group">
                 <%= form.label :Categoria, class: 'h5 custom-font'  %> <br>
                 <%= form.select(:category_id, options_for_select(Category.pluck(:name, :id)), { prompt: "Seleccionar Categoria" }, { class: "form form-group form-control" }) %>
               </div>
@@ -63,6 +58,17 @@
                 <%= form.label :Tienda, class: 'h5 custom-font'  %> <br>
                 <%= form.select(:store_id, options_for_select(Store.pluck(:name, :id)), { prompt: "Seleccionar Tienda" }, { class: "form form-group form-control" }) %>
               </div>
+
+             <div class="form-group">
+
+              <div class="form-row">
+                <div class="col-md-2">
+                  <%= form.label :Puntuacion, class: 'h5 custom-font' %>
+                 
+                  <div id="rating-form"></div>
+                </div>
+               </div>
+               </div>
     
               <div class="form-group">
                 <%= form.label :Imagen, class: 'h5 custom-font'  %> <br>
@@ -79,3 +85,13 @@
     </div>
   </div>
 
+
+  <script>
+  
+  $('#rating-form').raty({
+    size     : 60,
+    starOff: '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    scoreName: 'product[totalScore]'
+  });
+  </script>
