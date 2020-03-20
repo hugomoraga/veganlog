@@ -1,9 +1,9 @@
 <div class="container">
+
 <%= form_with(model: address, local: true) do |form| %>
   <% if address.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(address.errors.count, "error") %> prohibited this address from being saved:</h2>
-
       <ul>
       <% address.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,30 +11,48 @@
       </ul>
     </div>
   <% end %>
+  <!--Botones -->
+  <div class="row">
+    <div class="col-md-2"></div>
+      <div class="d-flex p-2">
+        <%= link_to 'Volver', addresses_path, class:"m-2 btn btn-info" %>
+      </div>
+  </div>
 
-  <div class="form-group">
-    <%= form.text_field :name, id:"searchTextField", type:"text", size:"50", placeholder:"Enter a location", autocomplete:"on", runat:"server",  class:"form-control" %>
-    </div>
-
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <%= form.text_field :latitude, id:"latitude", placeholder:"Latitude", class:"form-control form-control-sm", style:"pointer-events: none; width:95%" %>
-              </div>
-              <div class="form-group col-md-6">
-                 <%= form.text_field :longitude, id:"longitude", placeholder:"Longitude", class:"form-control form-control-sm", style:"pointer-events: none; width:95%"%>
-              </div>
+  <div class="row pb-5">
+    <div class="col-md-2"></div>
+      <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+              <%= form.text_field :name, id:"searchTextField", type:"text", size:"50", placeholder:"Enter a location", autocomplete:"on", runat:"server",  class:"form-control" %>
             </div>
 
-    <div class="form-group">
-  <%= form.label :Tiendas, class: 'custom-font'  %>
-    <%= form.select(:store_id, options_for_select(Store.pluck(:name, :id)), { prompt: "Seleccionar Tienda" }, { class: "form form-group form-control" }) %>
-  </div>
-<div class="actions">
-  <%= form.submit %>
-  </div>
-<% end %>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <%= form.text_field :latitude, id:"latitude", placeholder:"Latitude", class:"form-control form-control-sm", style:"pointer-events: none; width:95%" %>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <%= form.text_field :longitude, id:"longitude", placeholder:"Longitude", class:"form-control form-control-sm", style:"pointer-events: none; width:95%"%>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <%= form.label :"Tienda", class: 'custom-font'  %>
+                    <%= form.select(:store_id, options_for_select(Store.pluck(:name, :id)), { prompt: "Seleccionar Tienda" }, { class: "form form-group form-control" }) %>
+                </div>
 
+                <div class="actions">
+                <%= form.submit 'Guardar', :class => 'btn btn-info' %>
+                </div>
+                <% end %>
+            </div>
+          </div>
+      </div>
+    <div class="col-md-2"></div> 
+  </div>
 </div>
+
+<!--SCRIPT AUTOCOMPLETE -->
 
 <script type="text/javascript">
     function initialize() {

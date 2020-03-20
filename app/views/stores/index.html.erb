@@ -1,8 +1,5 @@
-
-
-  <div class="container pb-5">
-  <div>
-    <h1 class="text-center custom-font p-3">Tiendas</h1>
+<div class="container pb-3">
+  <div><h2 class="text-center custom-font p-2">Tiendas</h2>
     <%= link_to 'Nueva Tienda', new_store_path, :class => 'btn btn-info m-3'%>
     </div>
  
@@ -11,28 +8,32 @@
         <div class="row no-gutters">
 
 
-          <div class="col-md-6">
+          <div class="col-md-4">
             <div class="card-body">
               <h5 class="card-title"><span class="strong"> <%=store.name%> </span></h5>
               <p class="card-text"> <span class="h5"> <%= link_to nil, store.url %> </span></h5> </p>
             </div>
+            <% if user_signed_in? %>
+            <% if current_user.has_role? :admin %>
                 <div class="card-footer">
                   <%= link_to 'Show', store %>
                   <%= link_to 'Edit', edit_store_path(store) %>
                   <%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %>
                </div>
+               <% end %>
+               <% end %>
           </div>
           
-          <div class="col-md-6">
+          <div class="col-md-8">
             <div class="card-body">
 
             <span><h5 class="card-title m-1">Direcciones</h5>
-          <div class="card m-2">
+          <div class="card m-1">
             <% store.addresses.each do |address| %>
              <div class="row p-2">
-              <div class="col-9">
+              <div class="col-8">
               <h6 class="card-text m-1"><%= address.name %> </div> 
-              <div class="col-1">
+              <div class="col-2">
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-lat='<%= address.latitude %>' data-lng='<%= address.longitude %>'>Mapa</button></span></h6>
               </div>
               </div>
